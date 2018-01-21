@@ -1,11 +1,14 @@
+import ExceptionPackage.SqrtIllegalArgumentException;
 import TextAnalyzer.*;
+
+import java.util.Scanner;
 
 public class HelloWorld {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        //System.out.println("Hello World!");
         //do_3_5_9();
-
+        do_4_1_9();
     }
 
     public static void do_3_5_9() {
@@ -34,11 +37,7 @@ public class HelloWorld {
     }
 
     public static void do_4_1_9() {
-
-    }
-
-    public static double sqrt(double x) {
-        return 0; // your implementation here
+        System.out.println(SqrtIllegalArgumentException.sqrt(-1));
     }
 
 }
