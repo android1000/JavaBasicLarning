@@ -9,10 +9,8 @@ public class NegativeTextAnalyzer extends KeywordAnalyzer implements TextAnalyze
 
     @Override
     public String[] getKeywords(){
-        String[] str=new String[Smiles.length];
-        str= Arrays.copyOf(Smiles, Smiles.length);
-        return str;
-    };
+        return Arrays.copyOf(Smiles, Smiles.length);
+    }
 
     @Override
     public Label getLabel(){

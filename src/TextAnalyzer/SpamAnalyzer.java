@@ -3,6 +3,7 @@ package TextAnalyzer;
 import java.util.Arrays;
 
 public class SpamAnalyzer extends KeywordAnalyzer implements TextAnalyzer {
+    @SuppressWarnings("CanBeFinal")
     private String[] keywords;
 
     public SpamAnalyzer (String[] str){
@@ -11,10 +12,8 @@ public class SpamAnalyzer extends KeywordAnalyzer implements TextAnalyzer {
 
     @Override
     public String[] getKeywords(){
-        String[] str=new String[keywords.length];
-        str=Arrays.copyOf(keywords, keywords.length);
-        return str;
-    };
+        return Arrays.copyOf(keywords, keywords.length);
+    }
 
     @Override
     public Label getLabel(){

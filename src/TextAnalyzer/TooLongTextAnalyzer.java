@@ -1,5 +1,6 @@
 package TextAnalyzer;
 
+@SuppressWarnings("CanBeFinal")
 public class TooLongTextAnalyzer implements TextAnalyzer{
     private int maxLength;
 

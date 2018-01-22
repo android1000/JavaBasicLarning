@@ -1,0 +1,90 @@
+package Robot;
+
+
+public class Robot {
+    private int x;
+    private int y;
+    private Direction direction;
+
+
+
+ //   public void setDirection (String s) {
+
+//    }
+
+
+    public Robot(int x, int y, Direction direction){
+        this.x=x;
+        this.y=y;
+        this.direction=direction;
+    }
+
+    public int getX() {
+        // текущая координата X
+        return x;
+    }
+
+    public int getY() {
+        // текущая координата Y
+        return y;
+    }
+
+    public void turnLeft() {
+        // повернуться на 90 градусов против часовой стрелки
+        switch (direction){
+            case UP:
+                direction=Direction.LEFT;
+                break;
+            case LEFT:
+                direction=Direction.DOWN;
+                break;
+            case DOWN:
+                direction=Direction.RIGHT;
+                break;
+            case RIGHT:
+                direction=Direction.UP;
+                break;
+        }
+    }
+
+    public void turnRight() {
+        // повернуться на 90 градусов по часовой стрелке
+        switch (direction) {
+            case UP:
+                direction = Direction.RIGHT;
+                break;
+            case RIGHT:
+                direction = Direction.DOWN;
+                break;
+            case DOWN:
+                direction = Direction.LEFT;
+                break;
+            case LEFT:
+                direction = Direction.UP;
+                break;
+        }
+    }
+
+    public void stepForward() {
+        // шаг в направлении взгляда
+        // за один шаг робот изменяет одну свою координату на единицу
+        switch (direction){
+            case UP:
+                y++;
+                break;
+            case DOWN:
+                y--;
+                break;
+            case LEFT:
+                x--;
+                break;
+            case RIGHT:
+                x++;
+                break;
+        }
+    }
+    public Direction getDirection(){
+        return this.direction;
+    }
+}
+
