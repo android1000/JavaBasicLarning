@@ -25,9 +25,7 @@ public final class ComplexNumber {
         }
         if (anObject instanceof ComplexNumber){
             ComplexNumber tmp = (ComplexNumber)anObject;
-            if (Double.compare(this.im,tmp.im)==0 && Double.compare(this.re,tmp.re)==0) {
-                return true;
-            }
+            return Double.compare(this.getIm(), tmp.getIm()) == 0 && Double.compare(this.getRe(), tmp.getRe()) == 0;
         }
         return false;
     }

@@ -3,14 +3,20 @@ import TextAnalyzer.*;
 import Ascii.*;
 import java.util.function.DoubleUnaryOperator;
 
-class HelloWorld {
+
+public class HelloWorld {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        //do_3_5_7();
+        do_3_5_7();
         do_3_5_8();
-        //do_3_5_9();
-        //do_4_1_9();
+        do_3_5_9();
+        do_4_1_9();
+        do_4_1_10();
+        System.out.println(getCallerClassAndMethodName());
+        AnotherMethod();
+        AnotherMethod2();
+        AnotherMethod3();
     }
 
     public static void do_3_5_7(){
@@ -41,6 +47,7 @@ class HelloWorld {
         System.out.println("length: " + sq.length());
         System.out.println("charAt: " + sq.charAt(2));
         System.out.println("subSequence: " + sq.subSequence(1,2));
+        System.out.println("subSequence: " + sq1.subSequence(1,2));
         System.out.println("subSequence: " + sq2.subSequence(0,0));
         System.out.println("toString: " + sq.toString());
         for(int i=0; i<sq.length();i++){
@@ -83,6 +90,36 @@ class HelloWorld {
 
     public static void do_4_1_9() {
         System.out.println(SqrtIllegalArgumentException.sqrt(25));
+    }
+
+    public static void do_4_1_10() {
+        System.out.println(getCallerClassAndMethodName());
+    }
+
+    public static String getCallerClassAndMethodName(){
+        StackTraceElement[] stackTraceElements = new Throwable().getStackTrace();
+        StringBuilder s = new StringBuilder();
+        int i=0;
+        if (stackTraceElements.length<=2) i=stackTraceElements.length-1;
+        for (StackTraceElement ste:stackTraceElements) {
+            s=s.append(i).append(": ").append("ClassName - ").append(ste.getClassName()).append(", MethodName - ").append(ste.getMethodName()).append('\n');
+            i++;
+        }
+        return s.toString();
+
+        //return stackTraceElements[i].getClassName().toString()+"#"+stackTraceElements[i].getMethodName().toString();
+    }
+
+    public static void AnotherMethod (){
+        System.out.println(getCallerClassAndMethodName());
+    }
+
+    public static void AnotherMethod2 (){
+        AnotherMethod();
+    }
+
+    public static void AnotherMethod3 (){
+        AnotherMethod2();
     }
 
 }

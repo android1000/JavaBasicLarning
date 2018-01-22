@@ -3,7 +3,7 @@ package TextAnalyzer;
 import java.util.Arrays;
 
 public class SpamAnalyzer extends KeywordAnalyzer implements TextAnalyzer {
-    @SuppressWarnings("CanBeFinal")
+
     private String[] keywords;
 
     public SpamAnalyzer (String[] str){

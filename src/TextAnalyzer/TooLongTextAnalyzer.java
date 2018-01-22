@@ -9,7 +9,7 @@ public class TooLongTextAnalyzer implements TextAnalyzer{
     }
 
     public Label processText(String text) {
-        return text.length()<=this.maxLength ? Label.OK : Label.TOO_LONG;
+        return text.length()<=getMaxLength() ? Label.OK : Label.TOO_LONG;
     }
 
     public int getMaxLength(){
